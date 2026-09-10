@@ -16,6 +16,13 @@ function App() {
     active: true
   };
 
+  const student = {
+  name: "Jakub",
+  surname: "Osuch",
+  className: "4P",
+  specialization: "technik programista"
+};
+
   const course = {
     name: "Zaawansowane Aplikacje Webowe",
     teacher: "Rafał Taraszka",
@@ -39,6 +46,12 @@ function App() {
       <p>Kategoria: {technology.category}</p>
 
       <p>Liczba godzin: {technology.hours}</p>
+      <br />
+      <p>Uczeń: {student.name} {student.surname}</p>
+
+      <p>Klasa: {student.className}</p>
+
+      <p>Kierunek: {student.specialization}</p>
       <br />
       <section>
         <h2 className="red">{course.name}</h2>
