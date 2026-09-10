@@ -26,6 +26,27 @@ function App() {
   return (
     <>
 
+      <h1>{app.name}</h1>
+
+      <p>Wersja: {app.version}</p>
+
+      <p>Autor: {app.author}</p>
+
+      <p>Liczba technologii: {app.technologiesCount}</p>
+      <br />
+      <p>{technology.name}</p>
+
+      <p>Kategoria: {technology.category}</p>
+
+      <p>Liczba godzin: {technology.hours}</p>
+      <br />
+      <section>
+        <h2 className="red">{course.name}</h2>
+
+        <p>Nauczyciel: {course.teacher}</p>
+
+        <p>Liczba godzin: {course.hours}</p>
+      </section>
     </>
   );
 }
