@@ -1,65 +1,35 @@
-import './App.css'
+import Header from "./components/Header.jsx";
+import Technology from "./components/Technology.jsx";
+import Footer from "./components/Footer.jsx";
+import Student from "./components/Student.jsx";
+import InfoBox from "./components/InfoBox.jsx";
+import Navigation from "./components/Navigation.jsx";
+import CourseCard from "./components/CourseCard.jsx";
 
 function App() {
-
-  const app = {
-    name: "WebTech",
-    version: "1.0",
-    author: "Jakub Osuch",
-    technologiesCount: 3
-  };
-
-  const technology = {
-    name: "React",
-    category: "Frontend",
-    hours: 30,
-    active: true
-  };
-
-  const student = {
-  name: "Jakub",
-  surname: "Osuch",
-  className: "4P",
-  specialization: "technik programista"
-};
-
-  const course = {
-    name: "Zaawansowane Aplikacje Webowe",
-    teacher: "Rafał Taraszka",
-    hours: 4,
-    completed: true
-  };
-
   return (
     <>
+      <Header />
 
-      <h1>{app.name}</h1>
+      <Navigation />
 
-      <p>Wersja: {app.version}</p>
+      <main>
 
-      <p>Autor: {app.author}</p>
+        <Technology />
 
-      <p>Liczba technologii: {app.technologiesCount}</p>
-      <br />
-      <p>{technology.name}</p>
+        <Technology />
 
-      <p>Kategoria: {technology.category}</p>
+        <Technology />
 
-      <p>Liczba godzin: {technology.hours}</p>
-      <br />
-      <p>Uczeń: {student.name} {student.surname}</p>
+        <Student />
 
-      <p>Klasa: {student.className}</p>
+        <InfoBox />
 
-      <p>Kierunek: {student.specialization}</p>
-      <br />
-      <section>
-        <h2 className="red">{course.name}</h2>
+        <CourseCard />
 
-        <p>Nauczyciel: {course.teacher}</p>
+      </main>
 
-        <p>Liczba godzin: {course.hours}</p>
-      </section>
+      <Footer />
     </>
   );
 }
