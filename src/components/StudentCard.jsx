@@ -9,4 +9,4 @@ function StudentCard(props){
     )
 }
 
-export default StudentCard;aaa
+export default StudentCard;
