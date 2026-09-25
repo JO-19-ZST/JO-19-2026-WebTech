@@ -5,8 +5,20 @@ import Student from "./components/Student.jsx";
 import InfoBox from "./components/InfoBox.jsx";
 import Navigation from "./components/Navigation.jsx";
 import CourseCard from "./components/CourseCard.jsx";
+import StudentCard from "./components/StudentCard.jsx";
 
 function App() {
+
+  const studentOne = {
+    id: 1,
+    firstName: "Jan",
+    lastName: "Kowalski",
+    className: "4P",
+    specialization: "technik programista",
+    gradesAverage: 4.75,
+    isActive: true
+  };
+
   return (
     <>
       <Header />
@@ -22,6 +34,8 @@ function App() {
         <Technology />
 
         <Student />
+
+        <StudentCard student={studentOne} />
 
         <InfoBox />
 
