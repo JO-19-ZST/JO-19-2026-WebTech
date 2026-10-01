@@ -1,9 +1,7 @@
-function Student(){
+function Student(props){
     return (
         <>
-            <p>Jakub Osuch</p>
-            <p>4P</p>
-            <p>Technik programista</p>
+            <h2>{props.name}, {props.age} lat, {props.className} - {props.specialization}</h2>
         </>
     )
 }

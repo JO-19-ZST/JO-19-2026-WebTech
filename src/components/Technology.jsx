@@ -1,9 +1,8 @@
-function Technology() {
+function Technology(props) {
   return (
     <section>
-      <h2>React</h2>
-      <p>Biblioteka frontendowa</p>
-      <p>Liczba godzin: 30</p>
+      <h2>{props.name}</h2>
+      <p>Liczba godzin: {props.hours}</p>
     </section>
   );
 }
