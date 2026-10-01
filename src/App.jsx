@@ -17,9 +17,11 @@ function App() {
   ]
 
   const technologies = [
-    {id: 1, name: "React", hours: 20},
-    {id: 2, name: "Node.js", hours: 30},
-    {id: 3, name: "MySQL", hours: 50}
+    {id: 1, name: "React", category: "Frontend + Backend", hours: 20},
+    {id: 2, name: "Node.js", category: "Backend", hours: 30},
+    {id: 3, name: "MySQL", category: "Baza danych", hours: 50},
+    {id: 4, name: "Express", category: "Backend", hours: 25},
+    {id: 5, name: "MongoDB", category: "Baza danych", hours: 20}
   ];
 
   const students = [
@@ -47,6 +49,7 @@ function App() {
       {technologies.map((technology) => (
         <Technology key={technology.id}
           name={technology.name}
+          category={technology.category}
           hours={technology.hours}
         />
       ))}
