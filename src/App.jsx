@@ -6,6 +6,7 @@ import InfoBox from "./components/InfoBox.jsx";
 import Navigation from "./components/Navigation.jsx";
 import CourseCard from "./components/CourseCard.jsx";
 import StudentCard from "./components/StudentCard.jsx";
+import Book from "./components/Book.jsx";
 
 function App() {
 
@@ -22,10 +23,16 @@ function App() {
   ];
 
   const students = [
-  {id: 1, name: "Anna", className: "4P", age: 17, specialization: "technik programista"},
-  {id: 2, name: "Jan", className: "4I", age: 18, specialization: "technik informatyk"},
-  {id: 3, name: "Adam", className: "4A", age: 16, specialization: "technik analityk"}
-];
+    {id: 1, name: "Anna", className: "4P", age: 17, specialization: "technik programista"},
+    {id: 2, name: "Jan", className: "4I", age: 18, specialization: "technik informatyk"},
+    {id: 3, name: "Adam", className: "4A", age: 16, specialization: "technik analityk"}
+  ];
+
+  const books = [
+    {id: 1, title: "Wiedźmin", author: "Andrzej Sapkowski"},
+    {id: 2, title: "Hobbit", author: "J.R.R. Tolkien"},
+    {id: 3, title: "Lalka", author: "Bolesław Prus"}
+  ]
 
   return (
     <>
@@ -52,6 +59,20 @@ function App() {
           specialization={student.specialization}
         />
       ))}
+      <br />
+      {books.map((book) => (
+        <Book key={book.id}
+          title={book.title}
+          author={book.author}
+        />
+      ))}
+      <br />
+      {books.map((book) => {return(
+        <Book key={book.id}
+          title={book.title}
+          author={book.author}
+        />
+      )})}
     </>
   );
 }
