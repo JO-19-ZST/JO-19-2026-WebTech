@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation.jsx";
 import CourseCard from "./components/CourseCard.jsx";
 import StudentCard from "./components/StudentCard.jsx";
 import Book from "./components/Book.jsx";
+import Product from "./components/Product.jsx";
 
 function App() {
 
@@ -36,6 +37,19 @@ function App() {
     {id: 3, title: "Lalka", author: "Bolesław Prus"}
   ]
 
+  const products = [
+    {id : 1, name: "Laptop", price: 2000},
+    {id: 2, name: "Komputer", price: 5500}
+  ]
+
+  function showTechnology(name){
+    console.log("Wybrano: " + name);
+  }
+
+  function selectProduct(name){
+    console.log(`Wybrany produkt: ${name}`);
+  }
+
   return (
     <>
       {cars.map(car => (
@@ -51,6 +65,7 @@ function App() {
           name={technology.name}
           category={technology.category}
           hours={technology.hours}
+          onSelect={showTechnology}
         />
       ))}
       <br />
@@ -76,6 +91,14 @@ function App() {
           author={book.author}
         />
       )})}
+      <br />
+      {products.map((product) => (
+        <Product key={product.id}
+          name={product.name}
+          price={product.price}
+          onSelect={selectProduct}
+        />
+      ))}
     </>
   );
 }
