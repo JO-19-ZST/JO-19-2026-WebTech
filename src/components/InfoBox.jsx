@@ -1,16 +1,11 @@
-function InfoBox(){
+function InfoBox({name, index}){
     return (
-        <>
-            <h1>InfoBox</h1>
-            <p>Treść</p>
-            <p>Treść</p>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-        </>
+        <button onClick={() => technologyName(name, index)}>{name}</button>
     )
+}
+
+function technologyName(name, index){
+    console.log(`Kliknięto technologię o indeksie ${index}: ${name}`);
 }
 
 export default InfoBox;
