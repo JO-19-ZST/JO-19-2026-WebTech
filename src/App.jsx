@@ -1,7 +1,10 @@
 import TechnologyImages from "./components/TechnologyImages.jsx";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+
+  const [selectedCategory, setSelectedCategory] = useState("Wszystko");
 
   const technologies = [
     { id: 1, name: "React", category: "Frontend", hours: 30, image: "react.webp" },
@@ -13,10 +16,16 @@ function App() {
     { id: 7, name: "CSS", category: "Frontend", hours: 20, image: "css.webp" },
     { id: 8, name: "HTML", category: "Frontend", hours: 10, image: "html.webp" },
     { id: 9, name: "PHP", category: "Backend", hours: 35, image: "php.webp" }
-  ];
+  ].filter((technology) => technology.category === selectedCategory || selectedCategory === "Wszystko");
 
   return (
     <>
+      <button className={selectedCategory === "Wszystko" ? "active" : ""} aria-pressed={selectedCategory === "Wszystko"} onClick={() => setSelectedCategory("Wszystko")}>Wszystko</button>
+      <button className={selectedCategory === "Frontend" ? "active" : ""} aria-pressed={selectedCategory === "Frontend"} onClick={() => setSelectedCategory("Frontend")}>Frontend</button>
+      <button className={selectedCategory === "Backend" ? "active" : ""} aria-pressed={selectedCategory === "Backend"} onClick={() => setSelectedCategory("Backend")}>Backend</button>
+      <button className={selectedCategory === "Baza danych" ? "active" : ""} aria-pressed={selectedCategory === "Baza danych"} onClick={() => setSelectedCategory("Baza danych")}>Baza danych</button>
+      <p>Wybrana kategoria: {selectedCategory}</p>
+      <p>Ilość technologii: {technologies.length}</p>
       {technologies.map((technology) => (
         <TechnologyImages key={technology.id}
           name={technology.name}
