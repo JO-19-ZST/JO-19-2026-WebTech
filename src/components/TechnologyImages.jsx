@@ -18,10 +18,10 @@ function TechnologyImages({name, category, hours, image}){
             </div>}
             <p>Polubienia: {likes}</p>
             <p>{isLearning ? "Uczę się" : "Jeszcze się nie uczę"}</p>
-            <button onClick={() => setLikes(likes + 1)}>Lubię</button>
-            <button onClick={() => setLikes(0)}>Reset</button>
-            <button onClick={() => setIsLearning(!isLearning)}>Zmień status nauki</button>
-            <button onClick={toggleDetails}>{visible ? "Ukryj szczegóły" : "Pokaż szczegóły"}</button>
+            <button className="btn btn-primary" onClick={() => setLikes(likes + 1)}>Lubię</button>
+            <button className="btn btn-danger" onClick={() => setLikes(0)}>Reset</button>
+            <button className="btn btn-outline-primary" onClick={() => setIsLearning(!isLearning)}>Zmień status nauki</button>
+            <button className="btn btn-success" onClick={toggleDetails}>{visible ? "Ukryj szczegóły" : "Pokaż szczegóły"}</button>
         </section>
     )
 }
