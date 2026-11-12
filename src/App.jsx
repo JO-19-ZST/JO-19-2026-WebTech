@@ -10,6 +10,7 @@ function App() {
     login: "",
     password: ""
   });
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   
@@ -54,7 +55,7 @@ function generujHaslo() {
           setInputs({
             address: formData.get("address"),
             login: formData.get("login"),
-            password: formData.get("password")
+            password: password
           });setGeneratePassword(true)}}>
           <div className="m-3">
             <label htmlFor="address" className="text-label">Adres WWW:</label>
@@ -70,10 +71,10 @@ function generujHaslo() {
               <label htmlFor="wygeneruj" className="form-check-label">Wygeneruj hasło</label>
             </div>
             <label htmlFor="password" className="text-label">Hasło:</label>
-            <input id="password" name="password" type={showPassword ? "text" : "password"} className="form-control" disabled={generatePassword}/>
+            <input id="password" name="password" type={showPassword ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)} className="form-control" disabled={generatePassword}/>
             <button type="button" className={showPassword ? "btn btn-dark m-2" : "btn btn-light m-2"} onClick={() => setShowPassword(!showPassword)}>{showPassword ? "Ukryj hasło" : "Pokaż hasło"}</button>
             {generatePassword && <button type="button" className="btn btn-info m-2" onClick={generujHaslo} disabled={!generatePassword}>Generuj hasło</button>}
-            {generatePassword && <button type="button" className="btn btn-success m-2" onClick={() => {document.getElementById("password").value = generatedPassword;setGeneratedPassword("")}} disabled={generatedPassword === ""}>Zastosuj hasło</button>}
+            {generatePassword && <button type="button" className="btn btn-success m-2" onClick={() => {setPassword(generatedPassword);setGeneratedPassword("")}} disabled={generatedPassword === ""}>Zastosuj hasło</button>}
             {generatePassword && <p className="m-2 lead">Podgląd wygenerowanego hasła: {generatedPassword}</p>}
           </div>
           <button className="btn btn-primary mt-3" type="submit">Zapisz</button>
